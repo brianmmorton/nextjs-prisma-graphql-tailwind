@@ -1,5 +1,18 @@
 # Next.js TypeScript Prisma GraphQL quality control template <!-- omit in toc -->
 
+# Custom Installation Steps
+
+- npm i
+- brew install postgres
+- brew services start postgres
+- psql postgres
+- CREATE DATABASE boiler;
+- npm run migrate
+- npm run dev
+- To use Auth0 to login to the app, you need to use ngrok to connect to the actions hook that adds the users to the database.
+- Run ngrok via https://dashboard.ngrok.com/get-started/setup/macos but make sure to use port 3000
+- ie, ngrok http 3000
+
 - [Tools included](#tools-included)
 - [App startup](#app-startup)
   - [SQLite](#sqlite)
@@ -34,24 +47,24 @@
 
 ## Tools included
 
--   [Next.js](https://nextjs.org/)
--   [TypeScript](https://www.typescriptlang.org/)
--   [GraphQL](https://graphql.org/)
-    -   [Apollo](https://www.apollographql.com/)
-        -   [Micro Server](https://www.npmjs.com/package/apollo-server-micro)
-        -   [React Client](https://www.apollographql.com/docs/react/)
-    -   [TypeGraphQL](https://typegraphql.com/)
-        -   [TypeGraphQL-Prisma automatic CRUD plugin](https://prisma.typegraphql.com/)
-    -   [GraphQL code generator](https://www.graphql-code-generator.com/)
--   [Prisma](https://www.prisma.io/)
-    -   [Entity Relationship Diagram auto-generator](https://github.com/keonik/prisma-erd-generator)
--   [Material-UI](https://material-ui.com/)
--   [React Hook Form](https://react-hook-form.com/)
--   Quality tools
-    -   [ESLint](https://eslint.org/)
-    -   [Prettier](https://prettier.io/)
-    -   [Jest](https://jestjs.io/)
-    -   [@testing-library/react](https://testing-library.com/docs/react-testing-library/intro/)
+- [Next.js](https://nextjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [GraphQL](https://graphql.org/)
+  - [Apollo](https://www.apollographql.com/)
+    - [Micro Server](https://www.npmjs.com/package/apollo-server-micro)
+    - [React Client](https://www.apollographql.com/docs/react/)
+  - [TypeGraphQL](https://typegraphql.com/)
+    - [TypeGraphQL-Prisma automatic CRUD plugin](https://prisma.typegraphql.com/)
+  - [GraphQL code generator](https://www.graphql-code-generator.com/)
+- [Prisma](https://www.prisma.io/)
+  - [Entity Relationship Diagram auto-generator](https://github.com/keonik/prisma-erd-generator)
+- [Material-UI](https://material-ui.com/)
+- [React Hook Form](https://react-hook-form.com/)
+- Quality tools
+  - [ESLint](https://eslint.org/)
+  - [Prettier](https://prettier.io/)
+  - [Jest](https://jestjs.io/)
+  - [@testing-library/react](https://testing-library.com/docs/react-testing-library/intro/)
 
 ## App startup
 
@@ -87,9 +100,9 @@ Once your development server is up and running, in a new terminal run the follow
 
 `npm run prisma` will do a few things for us:
 
--   Format your `prisma/schema.prisma` file (`prisma format`) | [prisma format documentation](https://www.prisma.io/docs/reference/api-reference/command-reference#format)
--   Keeps your `prisma/schema.prisma` file in sync with your database by auto generating migrations when needed (`npm run migrate`) | [prisma migration documentation](https://www.prisma.io/docs/concepts/components/prisma-migrate)
--   Seed your database with (`npm run seed`) | [prisma seeding documentation](https://www.prisma.io/docs/guides/database/seed-database/)
+- Format your `prisma/schema.prisma` file (`prisma format`) | [prisma format documentation](https://www.prisma.io/docs/reference/api-reference/command-reference#format)
+- Keeps your `prisma/schema.prisma` file in sync with your database by auto generating migrations when needed (`npm run migrate`) | [prisma migration documentation](https://www.prisma.io/docs/concepts/components/prisma-migrate)
+- Seed your database with (`npm run seed`) | [prisma seeding documentation](https://www.prisma.io/docs/guides/database/seed-database/)
 
 ## Using Prisma
 
@@ -137,11 +150,11 @@ here is an example query
 
 ```gql
 {
-    tools {
-        id
-        name
-        description
-    }
+  tools {
+    id
+    name
+    description
+  }
 }
 ```
 

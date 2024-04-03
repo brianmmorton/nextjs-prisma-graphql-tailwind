@@ -1,0 +1,1 @@
+export { NewTrainingForm } from './NewTrainingForm';
